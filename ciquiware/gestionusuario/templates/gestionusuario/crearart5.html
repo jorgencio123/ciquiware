@@ -48,6 +48,8 @@
 </head>
 <body>
     <div class="container mt-5">
+        <form method="post" action="{% url 'crearart5' %}">
+        {% csrf_token %}
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -60,15 +62,15 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">si</th>
-                    <td>no</td>
-                    <td>texto</td>
-                    <td>si</td>
-                    <td>no</td>
-                    <td>si</td>
-                    <td>no</td>
-                    <td>si</td>
-                    <td>no</td>
+                    <th scope="row"><input type="radio" name="pregunta_1" value="si"> Si</th>
+                    <td><input type="radio" name="pregunta_1" value="no"> No</td>
+                    <td><input type="text" name="pregunta_2"></td>
+                    <td><input type="radio" name="pregunta_3" value="si"> Si</td>
+                    <td><input type="radio" name="pregunta_3" value="no"> No</td>
+                    <td><input type="radio" name="pregunta_4" value="si"> Si</td>
+                    <td><input type="radio" name="pregunta_4" value="no"> No</td>
+                    <td><input type="radio" name="pregunta_5" value="si"> Si</td>
+                    <td><input type="radio" name="pregunta_5" value="no"> No</td>
                 </tr>
             </tbody>
         </table>
@@ -96,16 +98,21 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>lider</td>
-                    <td>asd</td>
-                    <td>as</td>
-                    <td>si</td>
-                    <td>no</td>
+                    <td></td>
+                    <td><input type="text" name="pregunta_6"></td>
+                    <td><input type="text" name="pregunta_7"></td>
+                    <td><input type="radio" name="pregunta_8" value="si"> Si</td>
+                    <td><input type="radio" name="pregunta_8" value="no"> No</td>
                     <td>firmita</td>
 
                 </tr>
             </tbody>
         </table>
+        <div class="footer-buttons">
+            <button type="button" class="btn btn-secondary">Regresar</button>
+            <button type="submit" class="btn btn-primary" >Enviar ART</button>
+        </div>
+    </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

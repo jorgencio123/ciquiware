@@ -48,53 +48,32 @@
 </head>
 <body>
     <div class="container mt-5">
-        <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">RIESGOS</th>
-                <th scope="col">MEDIDA DE CONTROL</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">¿El trabajo que asignaré cuenta con un estandar , procedimiento y/o instructivo?</th>
-                <td>Otto</td>
-              </tr>
-              <tr>
-                <th scope="row">¿El personal que asignaré para realizar el trabajo , cuenta con las capacitaciones , competencias , salud compatible y/o acreditaciones requeridas?</th>
-                <td>Thornton</td>
-              </tr>
-              <tr>
-                <th scope="row">¿Durante la planificacion del trabajo , me aseguro de solicitar los permisos para ingresar a las areas , intervenir equipos y/o interactuar con energias?</th>
-                <td>the Bird</td>
-              </tr>
-              <tr>
-                <th scope="row">¿Verifique que el personal cuenta con los elementos requeridos para realizar la segregacion y señalizacion del area de trabajo ,segun diseño?</th>
-                <td>Otto</td>
-              </tr>
-              <tr>
-                <th scope="row">¿El personal a mi cargo cuenta con sistemas de comunicacion de acuerdo al protocolo de emergencia del area?</th>
-                <td>Thornton</td>
-              </tr>
-              <tr>
-                <th scope="row">¿El personal que asignaré para realizar el trabajo , cuenta con los EPP definidos en el procedimiento de trabajo?</th>
-                <td>the Bird</td>
-              </tr>
-              <tr>
-                <th scope="row">¿El personal que asignaré para realizar el trabajo , cuenta con los EPP definidos en el procedimiento de trabajo?</th>
-                <td>the Bird</td>
-              </tr>
-              <tr>
-                <th scope="row">¿El personal que asignaré para realizar el trabajo , cuenta con los EPP definidos en el procedimiento de trabajo?</th>
-                <td>the Bird</td>
-              </tr>
-            </tbody>
-        </table>
-          
-
-          
-
+        <form method="post" action="{% url 'crearart4' %}">
+            {% csrf_token %}
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">RIESGOS</th>
+                        <th scope="col">MEDIDA DE CONTROL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range %}
+                    <tr>
+                        <th scope="row"><input type="text" name="riesgo{{ forloop.counter }}"></th>
+                        <td><input type="text" name="medida_control{{ forloop.counter }}"></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="footer-buttons">
+                <button type="button" class="btn btn-secondary">Regresar</button>
+                <button type="submit" class="btn btn-primary" onclick="redirectToCrearArt5()">Siguiente</button>
+            </div>
+        </form>
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

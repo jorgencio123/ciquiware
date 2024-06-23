@@ -48,50 +48,57 @@
 </head>
 <body>
     <div class="container mt-5">
-        <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Supervisor(a)</th>
-                <th scope="col">Si</th>
-                <th scope="col">No</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">¿El trabajo que asignaré cuenta con un estandar , procedimiento y/o instructivo?</th>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">¿El personal que asignaré para realizar el trabajo , cuenta con las capacitaciones , competencias , salud compatible y/o acreditaciones requeridas?</th>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">¿Durante la planificacion del trabajo , me aseguro de solicitar los permisos para ingresar a las areas , intervenir equipos y/o interactuar con energias?</th>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <th scope="row">¿Verifique que el personal cuenta con los elementos requeridos para realizar la segregacion y señalizacion del area de trabajo ,segun diseño?</th>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">¿El personal a mi cargo cuenta con sistemas de comunicacion de acuerdo al protocolo de emergencia del area?</th>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">¿El personal que asignaré para realizar el trabajo , cuenta con los EPP definidos en el procedimiento de trabajo?</th>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-        </table>
+        <form action="{% url 'crearart2' %}" method="POST">
+            {% csrf_token %}
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Supervisor(a)</th>
+                    <th scope="col">Si</th>
+                    <th scope="col">No</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">¿El trabajo que asignaré cuenta con un estandar, procedimiento y/o instructivo?</th>
+                    <td><input type="radio" name="pregunta_1" value="Si"></td>
+                    <td><input type="radio" name="pregunta_1" value="No"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">¿El personal que asignaré para realizar el trabajo, cuenta con las capacitaciones, competencias, salud compatible y/o acreditaciones requeridas?</th>
+                    <td><input type="radio" name="pregunta_2" value="Si"></td>
+                    <td><input type="radio" name="pregunta_2" value="No"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">¿Durante la planificación del trabajo, me aseguro de solicitar los permisos para ingresar a las áreas, intervenir equipos y/o interactuar con energías?</th>
+                    <td><input type="radio" name="pregunta_3" value="Si"></td>
+                    <td><input type="radio" name="pregunta_3" value="No"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">¿Verifiqué que el personal cuenta con los elementos requeridos para realizar la segregación y señalización del área de trabajo, según diseño?</th>
+                    <td><input type="radio" name="pregunta_4" value="Si"></td>
+                    <td><input type="radio" name="pregunta_4" value="No"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">¿El personal a mi cargo cuenta con sistemas de comunicación de acuerdo al protocolo de emergencia del área?</th>
+                    <td><input type="radio" name="pregunta_5" value="Si"></td>
+                    <td><input type="radio" name="pregunta_5" value="No"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">¿El personal que asignaré para realizar el trabajo, cuenta con los EPP definidos en el procedimiento de trabajo?</th>
+                    <td><input type="radio" name="pregunta_6" value="Si"></td>
+                    <td><input type="radio" name="pregunta_6" value="No"></td>
+                  </tr>
+                </tbody>
+            </table>
+            
+            <div class="footer-buttons">
+              <button type="button" class="btn btn-secondary">Regresar</button>
+              <button type="submit" class="btn btn-primary" >Siguiente</button>
+          </div>
+          </form>
           
 
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

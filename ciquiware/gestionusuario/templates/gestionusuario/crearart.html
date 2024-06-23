@@ -48,93 +48,98 @@
 </head>
 <body>
     <div class="container mt-5">
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Paso 1</th>
-                <th scope="col">Planificacion del trabajo a realizar</th>
-              </tr>
-            </thead>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Supervisor del area de trabajo</th>
-                <th scope="col"><input type="text"></th>
-              </tr>
-            </thead>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Empresa</th>
-                <th scope="col"><input type="text"></th>
-              </tr>
-            </thead>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Gerencia</th>
-                <th scope="col"><input type="text"></th>
-              </tr>
-            </thead>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Fecha</th>
-                <th scope="col"><input type="date"></th>
-              </tr>
-            </thead>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Hora inicio</th>
-                <th scope="col"><input type="time"  min="00:00" max="23:59" required /></th>
-              </tr>
-            </thead>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Hora termino</th>
-                <th scope="col"><input type="time"  min="00:00" max="23:59" required /></th>
-              </tr>
-            </thead>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Superintendencia/Direccion</th>
-                <th scope="col"><input type="text"></th>
-              </tr>
-            </thead>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Lugar especifico</th>
-                <th scope="col"><input type="text"></th>
-              </tr>
-            </thead>
-        </table>
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="background-color: black; color: white;" scope="col">Trabajo a Realizar</th>
-                <th scope="col"><input type="text"></th>
-              </tr>
-            </thead>
-        </table>
-        
-        <div class="footer-buttons">
-            <button class="btn btn-secondary">Regresar</button>
-            <button class="btn btn-primary">Siguiente</button>
-        </div>
+        <form action="{% url 'crearart' %}" method="POST">
+            {% csrf_token %}
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Paso 1</th>
+                    <th scope="col">Planificacion del trabajo a realizar</th>
+                  </tr>
+                </thead>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Supervisor del area de trabajo</th>
+                    <th scope="col"><input type="text" name="supervisor"></th>
+                  </tr>
+                </thead>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Empresa</th>
+                    <th scope="col"><input type="text" name="empresa"></th>
+                  </tr>
+                </thead>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Gerencia</th>
+                    <th scope="col"><input type="text" name="gerencia"></th>
+                  </tr>
+                </thead>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Fecha</th>
+                    <th scope="col"><input type="date" name="fecha"></th>
+                  </tr>
+                </thead>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Hora inicio</th>
+                    <th scope="col"><input type="time" name="hora_inicio" min="00:00" max="23:59" required /></th>
+                  </tr>
+                </thead>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Hora termino</th>
+                    <th scope="col"><input type="time" name="hora_termino" min="00:00" max="23:59" required /></th>
+                  </tr>
+                </thead>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Superintendencia/Direccion</th>
+                    <th scope="col"><input type="text" name="superintendencia"></th>
+                  </tr>
+                </thead>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Lugar especifico</th>
+                    <th scope="col"><input type="text" name="lugar_especifico"></th>
+                  </tr>
+                </thead>
+            </table>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th style="background-color: black; color: white;" scope="col">Trabajo a Realizar</th>
+                    <th scope="col"><input type="text" name="trabajo_a_realizar"></th>
+                  </tr>
+                </thead>
+            </table>
+            
+            <div class="footer-buttons">
+                <button type="button" class="btn btn-secondary">Regresar</button>
+                <button type="submit" class="btn btn-primary" >Siguiente</button>
+            </div>
+        </form>
 
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
